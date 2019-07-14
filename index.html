@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="js/js/bootstrap.js">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity=
+            "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <style>
+        .nav1.justify-content-end.nav-item h1 {
+            text-align: left;
+        }
+
+        .search {
+            border: 5px solid #005cbf;
+            width: 350px;
+            float: right;
+        }
+
+        .nav-item h1 {
+            text-align: left;
+        }
+
+        .chart svg, .chart canvas {
+            width: 100% !important
+        }
+
+        audio, canvas, progress, video {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        tr {
+            transition: all .25s ease-in-out;
+        }
+
+        tr:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<ul class="nav1 justify-content-start">
+    <li class="nav-item">
+        <h1 style="float: left "><img src="image/Shopping-icons-09-512.png" border="50" height="50"
+                                      style="background-color: white">POS System</h1>
+    </li>
+</ul>
+
+<div class="row">
+    <div class="col-2" style="background-color: #343a40">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"
+             style="height: 550px;width: 100%">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+               aria-controls="v-pills-home" aria-selected="true" style="font-size: 15px;font-weight: normal">
+                <i class="fas fa-home" style="font-size: 30px"></i> Home</a>
+            <a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+               aria-controls="v-pills-profile" aria-selected="false" style="font-size: 15px;font-weight: normal"><i
+                    class="fas fa-user-check" style="font-size: 30px"></i> Manage Customer</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+               aria-controls="v-pills-messages" aria-selected="false" style="font-size: 15px;font-weight: normal"><i
+                    class="fas fa-cart-plus" style="font-size: 30px"></i> Manage Items</a>
+            <!--<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"-->
+               <!--aria-controls="v-pills-settings" aria-selected="false" style="font-size: 15px;font-weight: normal"><i-->
+                    <!--class="fas fa-shopping-basket" style="font-size: 30px"></i> Manage Orders</a>-->
+
+            <a class="nav-link" id="v-pills-place-tab" data-toggle="pill" href="#v-pills-place" role="tab"
+               aria-controls="v-pills-place" aria-selected="false" style="font-size: 15px;font-weight: normal"> <i
+                    class="fab fa-amazon-pay" style="font-size: 30px"></i> Place Orders</a>
+        </div>
+    </div>
+
+    <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-7">
+                        <div class="card" style="padding-left: 80px">
+                            <div class="card-body">
+                                <h5 class="card-title">Today</h5>
+                                <p class="card-text">150 Customers </p>
+                                <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Sales : Today</h5>
+                                <p class="card-text"> RS:2500</p>
+                                <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card" style="padding-right: 50px;margin-left: 20px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Orders</h5>
+                                <p class="card-text">9 </p>
+                                <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Notifications</h5>
+                                <p class="card-text" style="color: whitesmoke"> No new Notifications</p>
+                                <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="padding-right: 50px;margin: 200px;width:500px;height: 250px">
+                        <div class="card-body">
+                            <!--<h5 class="card-title">-->
+                            <img src="image/chart-update-default.png" style="width: 500px;height: 250px" alt="">
+                            <!--</h5>-->
+                            <p class="card-text"></p>
+                            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-profile" aria-labelledby="v-pills-profile-tab">
+                <form style="margin-top: 20px">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Customer Name</label>
+                            <input type="text" class="form-control" placeholder="Name" name="name" id="cname">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" placeholder="email" name="email" id="email">
+                        </div>
+                    </div>
+                    <div class="form-group" style="width: 170px">
+                        <label>Customer ID</label>
+                        <input type="text" class="form-control" placeholder="C001" name="id" id="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" placeholder="1234 Main St" name="address" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Telephone No</label>
+                        <input type="tel" class="form-control" placeholder="011-1234567" name="tel" id="tel">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" name="city" id="city">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" name="zip" id="inputZip">
+                        </div>
+                    </div>
+
+
+                    <br><br>
+                    <div class="search">
+                        <label><i class="fas fa-search"></i>Search Customer</label>
+                        <input type="text" class="form-control" placeholder="Name/ID">
+                    </div>
+                    <br>
+                </form>
+                <button class="btn btn-primary" onclick="addDataToTable();" id="btn-validation">Add</button>
+                <button type="button" class="btn btn-danger" onclick="removeRow()" id="delete">Delete</button>
+                <button type="button" class="btn btn-success" onclick="updatedetails()" id="update">Update</button>
+                <table id="table" class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Telephone No</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Zip</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <canvas id="myChart" style="max-width: 500px;"></canvas>
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <form>
+
+                    <div class="form-group">
+                        <label>Item Code</label>
+                        <input type="text" class="form-control" placeholder="ItemCode">
+                    </div>
+                    <div class="form-group">
+                        <label>Item Name</label>
+                        <input type="text" class="form-control" placeholder="ItemName">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Unit Price</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="UnitPrice"
+                                       aria-label="Dollar amount (with dot and two decimal places)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Quantity</label>
+                            <input type="text" name="qty" class="form-control" placeholder="Qty">
+                        </div>
+                    </div>
+
+
+                    <button id="add" type="button" onclick="addRow()" class="btn btn-primary">ADD</button>
+                    <button id="updateItem" onclick="updateRow()" type="button" class="btn btn-success">UPDATE</button>
+                    <button id="cancel" type="button" class="btn btn-secondary">CANCEL</button>
+                    <button id="deleteItem" onclick="deleteRow(row)" type="button" class="btn btn-danger">DELETE</button>
+                </form>
+                <!--<form id="customerForm">-->
+                    <!--<div class="form-row">-->
+                        <!--<div class="col">-->
+                            <!--<label>Item Name</label>-->
+                            <!--<input type="text" class="form-control" placeholder="Item name">-->
+                        <!--</div>-->
+                        <!--<div class="col">-->
+                            <!--<label>Item ID</label>-->
+                            <!--<input type="text" class="form-control" placeholder="ID">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-row">-->
+                        <!--<div class="col">-->
+                            <!--<label>QTY</label>-->
+                            <!--<input type="number" class="form-control" placeholder="qty">-->
+                        <!--</div>-->
+                        <!--<div class="col">-->
+                            <!--<label>Unit Price</label>-->
+                            <!--<input type="number" class="form-control" placeholder="Price">-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="col" style="margin: 20px">-->
+                        <!--<label>Item Detail</label>-->
+                        <!--<input type="text" class="form-control" placeholder="Detail">-->
+                    <!--</div>-->
+                <!--</form>-->
+                <!--<button type="submit" class="btn btn-primary">Save</button>-->
+                <!--<button type="button" class="btn btn-danger">Delete</button>-->
+                <!--<button type="button" class="btn btn-success">Update</button>-->
+                <br><br>
+                <div class="search">
+                    <label><i class="fas fa-search"></i>Search Item</label>
+                    <input type="text" class="form-control" placeholder="Name/ID">
+                </div>
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Item Detail</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Lux</th>
+                        <td>I001</td>
+                        <td>5</td>
+                        <td>45</td>
+                        <td>-----</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">rice</th>
+                        <td>I002</td>
+                        <td>5kg</td>
+                        <td>250</td>
+                        <td>-----</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">papadam</th>
+                        <td>I003</td>
+                        <td>20</td>
+                        <td>100</td>
+                        <td>-----</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-place" role="tabpanel" aria-labelledby="v-pills-place-tab">
+                <form id="order_form">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>OrderID</label>
+                            <input type="text" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Select Customer</label>
+                            <select id="cid"  class="form-control">
+                                <option selected>Choose Customer...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Select Item</label>
+                            <select id="item"  class="form-control">
+                                <option selected>Choose...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>ItemName</label>
+                            <input id="itemName" type="text" class="form-control" disabled placeholder="ItemName">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Avilable Qty</label>
+                            <input id="avi_qty" type="text" disabled class="form-control" placeholder="Qty">
+                        </div>
+                        <div class="form-group col">
+                            <label>Unit Price</label>
+                            <input id="price" type="text" class="form-control" placeholder="Price" disabled>
+                        </div>
+                        <div class="form-group col">
+                            <label>Buying Qty</label>
+                            <input id="qty" type="text" class="form-control" placeholder="Qty">
+                        </div>
+                        <div class="form-group col-12">
+                            <button id="addToCart" class="btn btn-success float-right" type="button">Add To Cart</button>
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ItemCode</th>
+                            <th scope="col">ItemName</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">UnitPrice</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Total</label>
+                            <input id="total" type="text" class="form-control" placeholder="Price" disabled>
+                        </div>
+                        <div class="form-group col">
+                            <label>Discount</label>
+                            <input id="discount" type="text" class="form-control" placeholder="Qty">
+                        </div>
+                        <div class="form-group col">
+                            <label>Sub-Total</label>
+                            <input id="sub-total" type="text" class="form-control" placeholder="Qty" disabled>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Paid Amount</label>
+                            <input id="paid-amount" disabled type="text" class="form-control" placeholder="Price">
+                        </div>
+                        <div class="form-group col">
+                            <label>Balance</label>
+                            <input id="balance" type="text" class="form-control" placeholder="Balance" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" id="confrm" class="btn btn-primary float-right">Confirm Order</button>
+                    </div>
+                </form>
+
+                <h3 style="text-align: left;margin-right: 80px">Total : <br> Rs:0000.00</h3>
+                <button type="button" class="btn btn-success" id="btnadd">Proceed</button>
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <form>
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Customer Name </label>
+                            <input type="text" class="form-control" placeholder="Customer name">
+                        </div>
+                        <div class="col">
+                            <label>Customer ID</label>
+                            <input type="text" class="form-control" placeholder="ID">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Order ID</label>
+                            <input type="text" class="form-control" placeholder="ID">
+                        </div>
+                        <div class="col">
+                            <label>Order Date</label>
+                            <input type="date" class="form-control" placeholder="date">
+                        </div>
+
+                    </div>
+                    <div class="col" style="margin: 20px">
+                        <label>Order Detail</label>
+                        <input type="text" class="form-control" placeholder="Detail">
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-success">Update</button>
+                <br><br>
+                <div class="search">
+                    <label><i class="fas fa-search"></i>Search order</label>
+                    <input type="text" class="form-control" placeholder="Name/ID">
+                </div>
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Order Detail</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Ashen</th>
+                        <td>C001</td>
+                        <td>O001</td>
+                        <td>2019-27-5</td>
+                        <td>-----</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Akila</th>
+                        <td>C002</td>
+                        <td>O002</td>
+                        <td>2019-27-5</td>
+                        <td>-----</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Nipuna</th>
+                        <td>C003</td>
+                        <td>O003</td>
+                        <td>2019-27-5</td>
+                        <td>-----</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<footer class="bg-dark" style="height: 150px">
+    <h5 style="color: white;text-align: center">
+        Developed By CodexGeeks
+    </h5>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/pos.js"></script>
+<script src="js/inMemory-DB.js"></script>
+<script src="js/date-formatter.js"></script>
+<script src="js/data.js"></script>
+<script>
+    $("#updateItem").hide();
+    $("#cancel").hide();
+    $("#deleteItem").hide();
+</script>
+<!--<script src="js/script.js"></script>-->
+</body>
+</html>
